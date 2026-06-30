@@ -1,0 +1,448 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+
+}
+
+.blob{
+
+position:fixed;
+border-radius:50%;
+filter:blur(120px);
+opacity:.35;
+z-index:-1;
+animation:float 12s infinite alternate;
+
+}
+
+.blob1{
+
+width:300px;
+height:300px;
+background:#00bfff;
+top:-50px;
+left:-80px;
+
+}
+
+.blob2{
+
+width:350px;
+height:350px;
+background:#ff00c8;
+right:-100px;
+bottom:-100px;
+
+}
+
+@keyframes float{
+
+100%{
+
+transform:translateY(80px) translateX(40px);
+
+}
+
+}
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.05);
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:25px;
+font-weight:bold;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:30px;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#38bdf8;
+
+}
+
+.hero{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 10%;
+min-height:100vh;
+
+}
+
+.hero-text{
+
+max-width:550px;
+
+}
+
+.hero h1{
+
+font-size:65px;
+margin:10px 0;
+
+}
+
+.hero h2{
+
+color:#38bdf8;
+height:40px;
+
+}
+
+.hero p{
+
+margin:20px 0;
+line-height:1.7;
+
+}
+
+.buttons{
+
+display:flex;
+gap:15px;
+
+}
+
+button{
+
+padding:15px 30px;
+border:none;
+border-radius:50px;
+background:#38bdf8;
+cursor:pointer;
+color:white;
+font-size:16px;
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+}
+
+.outline{
+
+background:transparent;
+border:2px solid #38bdf8;
+
+}
+
+.hero-image img{
+
+width:350px;
+border-radius:50%;
+border:6px solid #38bdf8;
+animation:updown 3s infinite ease-in-out;
+
+}
+
+@keyframes updown{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* Sections */
+
+section{
+
+padding:100px 10%;
+
+}
+
+section h2{
+
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+
+}
+
+/* Cards */
+
+.skill-grid,
+.project-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+
+}
+
+.card,
+.project{
+
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.4s;
+
+}
+
+.card:hover,
+.project:hover{
+
+transform:translateY(-10px);
+box-shadow:0 0 30px #38bdf8;
+
+}
+
+.card i{
+
+font-size:50px;
+color:#38bdf8;
+margin-bottom:15px;
+
+}
+
+/* Contact */
+
+form{
+
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+input,
+textarea{
+
+padding:15px;
+background:#1e293b;
+border:none;
+border-radius:10px;
+color:white;
+
+}
+
+textarea{
+
+height:150px;
+resize:none;
+
+}
+
+footer{
+
+padding:40px;
+text-align:center;
+
+}
+
+/* Scroll Animation */
+
+.reveal{
+
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column-reverse;
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:250px;
+margin-bottom:40px;
+
+}
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:6px;
+    z-index:1001;
+}
+
+.menu-toggle span{
+    width:28px;
+    height:3px;
+    background:#fff;
+    border-radius:10px;
+    transition:.3s;
+}
+
+/* Hamburger Animation */
+
+.menu-toggle.active span:nth-child(1){
+    transform:rotate(45deg) translate(7px,6px);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:rotate(-45deg) translate(7px,-6px);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:900px){
+
+header{
+    padding:18px 8%;
+}
+
+/* Hero */
+
+.hero{
+    flex-direction:column-reverse;
+    justify-content:center;
+    text-align:center;
+    gap:40px;
+    padding:120px 8% 60px;
+}
+
+.hero-text{
+    max-width:100%;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero h2{
+    font-size:24px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.hero-image img{
+    width:220px;
+}
+
+/* Buttons */
+
+.buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+/* Mobile Nav */
+
+.menu-toggle{
+    display:flex;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:250px;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+    background:#111827;
+
+    transition:.4s;
+}
+
+nav.active{
+    right:0;
+}
+
+nav a{
+    margin:0;
+    font-size:20px;
+}
+
+/* Sections */
+
+section{
+    padding:80px 8%;
+}
+
+.skill-grid,
+.project-grid{
+    grid-template-columns:1fr;
+}
+
+form{
+    width:100%;
+}
+
+}
