@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Icons -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3"></script>
+    <script src="https://unpkg.com/split-type"></script>
 </head>
 <body>
 
@@ -19,7 +17,10 @@
 
 <header>
 
-    <div class="logo">Portfolio</div>
+    <div class="logo">
+        <span id="portfolioText">Portfolio</span>
+        <i id="portfolioIcon" class="fa-solid fa-briefcase"></i>
+    </div>
 
     <nav id="navMenu">
         <a href="#home">Home</a>
@@ -44,8 +45,7 @@
         <h1>Rodelito Barbosa Jr</h1>
         <h2><span id="typing"></span></h2>
         <p>
-            Passionate Software Developer focused on creating beautiful,
-            responsive and high-performance web applications.
+            Aspiring Software Developer with a strong passion for building modern, responsive, and user-friendly web applications. Dedicated to continuously improving my programming skills, exploring new technologies, and creating reliable digital solutions through clean, efficient, and maintainable code.
         </p>
         <div class="buttons">
             <button>Download CV</button>
@@ -58,12 +58,13 @@
 </section>
 
 <section id="about" class="about reveal">
-<h2>About Me</h2>
-<p>
-I'm a software developer passionate about creating modern web
-applications using HTML, CSS, JavaScript, PHP, Python, SQL and
-other technologies.
-</p>
+    <h2>About Me</h2>
+
+    <p>
+        I am an aspiring Software Developer and a recent Information Technology graduate with a strong interest in web development and software engineering. I enjoy turning ideas into functional and visually appealing applications while continuously learning new programming languages, frameworks, and development practices.
+        Throughout my academic journey and personal projects, I have developed a solid foundation in front-end and back-end development, problem-solving, and database management. I value writing clean, maintainable code and creating responsive, user-friendly interfaces that provide a seamless user experience.
+        As I begin my professional career, I am eager to contribute to meaningful projects, collaborate with experienced developers, and continuously grow my technical expertise. My goal is to build software solutions that create value while developing into a skilled and dependable software engineer.
+    </p>
 </section>
 
 <section id="skills" class="skills reveal">
@@ -109,8 +110,8 @@ other technologies.
 <div class="project-grid">
 
 <div class="project">
-<h3>Portfolio Website</h3>
-<p>Modern responsive portfolio.</p>
+<h3>Clothing Store Website</h3>
+<p>Modern responsive e-commerce website.</p>
 </div>
 
 <div class="project">
@@ -119,8 +120,8 @@ other technologies.
 </div>
 
 <div class="project">
-<h3>AI Detection</h3>
-<p>YOLOv11 Object Detection Project.</p>
+<h3>Car Dent Detection</h3>
+<p>YOLOv8 Object Detection Project.</p>
 </div>
 
 </div>
@@ -133,13 +134,27 @@ other technologies.
 
 <form>
 
-<input type="text" placeholder="Your Name">
+    <div class="input-group">
+        <input type="text" id="name" required>
+        <label for="name">Full Name</label>
+    </div>
 
-<input type="email" placeholder="Email">
+    <div class="input-group">
+        <input type="email" id="email" required>
+        <label for="email">Email Address</label>
+    </div>
 
-<textarea placeholder="Message"></textarea>
+    <div class="input-group">
+        <input type="text" id="subject" required>
+        <label for="subject">Subject</label>
+    </div>
 
-<button>Send</button>
+    <div class="input-group">
+        <textarea id="message" required></textarea>
+        <label for="message">Message</label>
+    </div>
+
+    <button type="submit">Send Message</button>
 
 </form>
 
